@@ -1,0 +1,11 @@
+<div class="subjects ev">
+	<h2>Delete Event</h2>
+
+	<%= form_for(:ev , :url => {:action => 'destroy' , :id => @ev.id}) do |f| %>
+	<p>Are u wanna permanetly delete this Event?</p>
+	<p class="reference-name"><%= @ev.name %></p>
+	<div class="form-buttons">
+		<%= submit_tag("Delete Event")%>
+	</div>
+  <% end %>
+</div>

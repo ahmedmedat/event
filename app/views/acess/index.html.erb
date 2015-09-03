@@ -1,0 +1,19 @@
+<% @page_title = "Admin Menu"%>
+
+<div class = "menu">
+	<h2>Admin Menu</h2>
+	<div class ="identity">Logged in as:</div>
+	<ul>
+        <li><%= link_to("View Profile",{:controller => 'users' , :action => 'show' ,:id => @user.id }, :class => 'action show') %> </li>
+        
+        <li><%= link_to("View all Events",{:controller => 'evs' , :action => 'index'}, :class => 'action index') %> </li>
+
+        <li><%= link_to("View My Events",{:controller => 'evs' , :action => 'view',:id => @user.id }, :class => 'action view') %> </li>
+
+		<li><%= link_to("Manage My Events",{:controller => 'evs' , :action => 'myevents',:id => @user.id }, :class => 'action view') %> </li>
+		
+		<li><%= link_to("Create Events",{:controller => 'evs' , :action => 'new' ,:id => @user.id}, :class => 'action new') %> </li>
+
+		<li><%= link_to("Logout", :action => 'logout') %> </li>
+	</ul>
+</div>

@@ -1,0 +1,28 @@
+<div class="users index">
+  <h2>Users</h2>
+  <%= link_to("Add new user",{:action => 'new'},:class =>'action new')%>
+  <table class="listing" summary="User list">
+  	<tr class="header" >
+  	  
+  	  <th>Username</th>
+  	  <th>Email</th>
+  	  <th>Password</th>
+  	  <th>Event</th>
+  	  <th>Actions</th>
+  	 </tr>
+  	 <% @user.each do |user| %>
+  	 <tr>
+  	 	<td><%= user.username %></td>
+  	 	<td class="center"><%= user.email %></td>
+  	 	<td class="center"><%= user.password %></td>
+  	 	<td class="center"><%= user.evs.size %></td>
+  	 	<td class="actions">
+  	 		<%= link_to("Show",{:action => 'show',:id => user.id},:class => 'action show')%>
+  	 		<%= link_to("Edit",{:action => 'edit' , :id => user.id},:class => 'action edit')%>
+  	 		<%= link_to("Delete",{:action => 'delete' , :id => user.id},:class => 'action delete')%>
+        <%= link_to("View",{:controller => 'evs' , :action => 'view' ,:id => user.id},:class => 'action view') %>
+  	 	</td>
+  	 </tr>
+  	 <% end %>
+  </table>
+ </div>

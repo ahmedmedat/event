@@ -1,0 +1,26 @@
+<div class="evs view">
+  <h2>Events</h2>
+  <%= link_to("Add new event",{:action => 'new' ,:id => @d},:class =>'action new')%>
+  <table class="listing" summary="Events list">
+  	<tr class="header" >
+  	  
+  	  <th>Name</th>
+  	  <th>Date</th>
+  	  <th>Users</th>
+  	  <th>Actions</th>
+
+  	 </tr>
+  	 <% @ev.each do |ev| %>
+  	 <tr>
+  	 	<td><%= ev.name %></td>      
+  	 	<td class="center"><%= ev.date %></td>
+  	 	<td class="center"><%= ev.users.size %></td>
+  	 	<td class="actions">
+  	 		<%= link_to("Show",{:action => 'show',:id => ev.id},:class => 'action show')%>
+  	 		<%= link_to("Edit",'#',:class => 'action edit')%>
+  	 		<%= link_to("Delete",{:action => 'delete' , :id => ev.id},:class => 'action delete')%>
+  	 	</td>
+  	 </tr>
+  	 <% end %>
+  </table>
+ </div>

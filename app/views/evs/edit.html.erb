@@ -1,0 +1,26 @@
+<div class="evs edit">
+	<h2>Update Event</h2>
+	<%= form_for(:ev,:url => {:action => 'update', :id => @ev.id}) do |f|%>
+	  <table summary="event form fields"> 
+	  	<tr>
+	  		<th>Username</th>
+	  		<td><%= f.text_field(:name) %></td>
+	  	</tr>
+	  	<tr>
+	  	    <th>Date</th>
+	  	    <td><%= f.text_field(:date)%></td>
+        </tr>
+        <tr>
+        	<th>Description</th>
+        	<td><%=f.text_field(:description)%></td>
+        </tr>
+        <tr>
+        	<th>Location</th>
+        	<td><%=f.text_field(:location)%></td>
+        </tr>
+	  </table>
+	  <div class="form-buttons">
+	  	<%= submit_tag("Update Event")%>
+	  </div>
+	<% end %>  
+</div>

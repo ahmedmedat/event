@@ -1,0 +1,22 @@
+<div class="users edit">
+	<h2>Update User</h2>
+	<%= form_for(:user,:url => {:action => 'update', :id => @user.id}) do |f|%>
+	  <table summary="user form fields"> 
+	  	<tr>
+	  		<th>Username</th>
+	  		<td><%= f.text_field(:username) %></td>
+	  	</tr>
+	  	<tr>
+	  	    <th>Email</th>
+	  	    <td><%= f.text_field(:email)%></td>
+        </tr>
+        <tr>
+        	<th>Password</th>
+        	<td><%=f.text_field(:password)%></td>
+        </tr>
+	  </table>
+	  <div class="form-buttons">
+	  	<%= submit_tag("Update User")%>
+	  </div>
+	<% end %>  
+</div>
